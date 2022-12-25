@@ -28,7 +28,7 @@ class Headfone:
             # print(url)
             file_path = os.path.join(folder_path, title)
             if(os.path.exists(file_path)): continue
-            subprocess.Popen(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", url, "-c", "copy", file_path])
+            subprocess.Popen(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", url, "-c", "copy", file_path]).wait()
         
 if __name__ == "__main__":
     url = input("Enter the Headfone channel url: ")
